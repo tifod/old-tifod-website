@@ -19,9 +19,7 @@ Pour permettre aux histoires d'êtres traduites dans plusieurs langues, il est p
 ## Raccourcis (à venir)
 Pour pouvoir revenir en arrière dans une histoire, il est nécessaire de créer des posts raccourcis, comme sur votre ordinateur, ce seront des posts en apparence tout à fait semblable aux posts normaux, à l'exception d'une petite icone qui indiquera que vous lisez le contenu d'un autre endroit du site en continuant à scroller via ce post raccourci.
 
-# Contact
-contact@tifod.com pour me contacter
-
+# Contact ou suggestions
+Si vous avez un compte GitHub et que vous voulez participer, ou que vous avez simplement une suggestion, envoyez moi un email à contact@tifod.com
 ---
-
 Codé avec :heart: par jean
