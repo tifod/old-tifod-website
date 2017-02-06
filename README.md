@@ -21,5 +21,7 @@ Pour pouvoir revenir en arrière dans une histoire, il est nécessaire de créer
 
 # Contact ou suggestions
 Si vous avez un compte GitHub et que vous voulez participer, ou que vous avez simplement une suggestion, envoyez moi un email à contact@tifod.com
+
 ---
+
 Codé avec :heart: par jean
