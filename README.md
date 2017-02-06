@@ -12,6 +12,7 @@ Pour cette raison, tifod repose sur le principe de créations à plusieurs. Et p
 ## Remakes (à venir)
 Pour permetre aux histoires de s'affiner il y a les fins alternatives, mais pour permettre aux illustrations de s'affiner il y a les remakes. Les remakes sont des réappropriations par un autre artiste que l'auteur d'un post.
 Le procédé pour decider de la meilleure illustration est encore à décider (afficher le remake avec le meilleur score, ou afficher le remake que l'auteur aura choisi, ou afficher des miniatures des remakes sous le post original)
+*voir la discussion à ce propos : https://github.com/tifod/tifod-website/issues/1*
 
 ## Calques de traduction (à venir)
 Pour permettre aux histoires d'êtres traduites dans plusieurs langues, il est possible de poster du texte par dessus une image, et ce directement sur le site.
