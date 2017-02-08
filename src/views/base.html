@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}tifod{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+{% if error_message %}
+<div class="alert alert-danger" role="alert"><span class="fa fa-warning fa-fw"></span>{{ error_message|raw }}</div>
+{% endif %}
+{% block body %}
+<nav class="navbar">
+    <span class="tifod-logo"><a href='/'>tifod</a></span>
+    {% if current_user == null %}
+        <a href="/login" class="btn btn-primary navbar-right">{{ _('login')|capitalize }}</a>
+    {% else %}
+        <a href="/u/{{ current_user.pseudo }}" class="navbar-user navbar-right"><img src="{{ current_user.user_avatar_file_full_path }}" alt="profile picture" class="user_pic" /> {{ current_user.pseudo }}</a>
+    {% endif %}
+</nav>
+{% endblock %}
+<hr>
+<footer id="footer" class="footer navbar-static-bottom">
+    <div class="container">
+        <ul class="list-inline">
+            <li>
+                <div class="dropup">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ language_list[current_language_code] }}<span class="fa fa-fw fa-caret-down"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                    {% for language_code, language_worded in language_list %}
+                        <li{% if language_code == current_language_code %} class="disabled"><a href="#footer">{{ language_worded }}</a>{% else %}><a href="/lang/{{ language_code }}">{{ language_worded }}</a>{% endif %}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            <li><a class="btn btn-link" title="{{ _('visit our facebook page')|capitalize }}" href="http://www.facebook.com/tifodpage"><span aria-hidden="true" class="fa fa-fw fa-2x fa-facebook-official"></span><span class="sr-only">{{ _('visit our facebook page')|capitalize }}</span></a></li>
+            <li><a class="btn btn-link" title="{{ _('contact us')|capitalize }}" href="mailto:contact@tifod.com"><span aria-hidden="true" class="fa fa-fw fa-2x fa-envelope-o"></span><span class="sr-only">{{ _('contact us')|capitalize }}</span></a></li>
+            <li><a class="btn btn-link" title="{{ _('to know more about the team behind tifod')|capitalize }}" href="/about">{{ _('about tifod')|capitalize }}</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>
+<!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">$(document).bind("mobileinit", function(){$.extend(  $.mobile , {autoInitializePage: false})});</script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="/js/jquery.unveil.js"></script>
+    <script src="/js/script.perso.js"></script>
+<!-- css -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <link href="/css/style.perso.css" rel="stylesheet" type="text/css">

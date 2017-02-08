@@ -1,0 +1,8 @@
+{% for post in children %}
+    <div class="single-post">
+        <div>{% include 'post/post-details/post-author-date.html' %}</div>
+        <a href="/r/{{ post.post_id_64 }}">
+            <img class="post-thumbnail" src="/img/loader.svg" data-src="{{ post.file_full_path }}" height="{{ post.file_height }}px" width="{{ post.file_width }}px" >
+        </a>
+    </div>
+{% endfor %}

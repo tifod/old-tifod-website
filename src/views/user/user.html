@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.pseudo }} | tifod{% endblock %}
+
+{% block body %}
+{% if current_user.pseudo == user.pseudo %}
+<div class="tifod-logo tifod-logo-center"><a href="/">tifod</a></div>
+{% else %}
+    {{ parent() }}
+{% endif %}
+<div class="container">
+    <h1><img src="{{ user.user_avatar_file_full_path }}" alt="profile picture" style="height: 1em;" /> {{ user.pseudo }}</h1>
+    {% if user.pseudo == current_user.pseudo %}
+        <a class="btn btn-default" href="/logout"><span class="fa fa-fw fa-sign-out"></span>{{ _('logout')|capitalize }}</a>
+        <a class="btn btn-default" href="/settings"><span class="fa fa-fw fa-cog"></span>{{ _('settings')|capitalize }}</a>
+    {% endif %}
+    <a href="/u" class="btn btn-default"><span class="fa fa-fw fa-users"></span> {{ _('see all users')|capitalize }}</a>
+</div>
+<div class="container div-center">
+    {% include 'post/embedded-no-player.html' with {'children': user.posts } %}
+</div>
+{% endblock %}

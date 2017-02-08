@@ -1,0 +1,10 @@
+<div class="post{% if loop.first %} active-post{% endif %}" data-post-id="{{ post.post_id_64 }}" >
+    <img src="/img/loader.svg" data-src="{{ post.file_full_path }}" height="{{ post.file_height }}px" width="{{ post.file_width }}px" >
+    <div class="post-infos">
+        <span class="post-infos-left">{% include 'post/post-details/post-author-date.html' %}</span>
+        {% if children|length > 1 %}
+            <a class="badge" href="/r/{{ post.post_id }}/siblings"><span class="fa fa-fw fa-external-link"></span> {{ loop.index }} / {{ children|length }}</a>
+        {% endif %}
+        {% include 'post/post-details/more-btn.html' %}
+    </div>
+</div>

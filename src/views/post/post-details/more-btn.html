@@ -1,0 +1,11 @@
+<div class="dropdown post-infos-right">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ _('more') }}<span aria-hidden="true" class="fa fa-fw fa-ellipsis-v"></span></a>
+    <ul class="dropdown-menu dropdown-menu-right">
+    {% if post.parent_id != '0' %}
+        <li><a href="/r/{{ post.parent_id }}"><span class="fa fa-fw fa-arrow-up"></span> {{ _('see parent post')|capitalize }}</a></li>
+    {% endif %}
+    <li><a href="/r/{{ post.post_id_64 }}/add"><span class="fa fa-fw fa-plus"></span> {{ _('post an answer')|capitalize }}</a></li>
+    <li class="divider"></li>
+    <li><a href="/r/{{ post.post_id }}/about">{{ _('about')|capitalize }}</a></li>
+    </ul>
+</div>

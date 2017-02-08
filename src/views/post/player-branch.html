@@ -1,0 +1,13 @@
+{% include "post/children-view.html" %}
+
+{% for post in children %}
+    {% if post.children != null %}
+        <div class="post-group{% if loop.first %} active-group{% endif %}" id="children-{{ post.post_id_64 }}" >
+            {% include "post/player-branch.html" with {'children': post.children} %}
+        </div>
+    {% endif %}
+{% endfor %}
+
+
+
+

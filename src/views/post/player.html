@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{{ parent() }}
+<div class="container" id="player-content">
+    <div class="post-group active-group">
+        {% include "post/player-branch.html" with {'children':children} only %}
+    </div>
+</div>
+{% endblock %}

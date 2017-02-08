@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Jaldi:400,700');
+/* css variables */
+:root {
+  --tifod-color: #337ab7;
+  --tifod-color-dark: #23527c;
+  --background-color: whitesmoke;
+  --background-color-dark: #ddd;
+  /* --tifod-color: orangered; */
+  /* --tifod-color-dark: red; */
+  /* --background-color: #333; */
+  /* --background-color-dark: black; */
+  
+  --rgba-gray: rgba(0,0,0,0.2);
+  --rgba-gray-dark: rgba(0,0,0,0.5);
+  --border-radius: 5px;
+}
+
+/****************/
+/* global rules */
+/****************/
+    body { font-family: Jaldi, sans-serif; }
+    /* forms */
+    label { margin: 0; font-weight: normal; }
+    form label { cursor: pointer; font-weight: 700; }
+    .required:after { content: " *"; color: red; }
+    /* error message */
+    .alert-danger { margin: 5px; }
+    /* center with div-center */
+    .div-center { text-align: center; }
+    /* colors */
+        body { background-color: var(--background-color); }
+        hr { border-color: var(--background-color-dark); }
+        /* btns */
+        .btn-primary { background-color: var(--tifod-color); border-color: var(--tifod-color-dark); }
+        .btn-primary:hover, .btn-primary:focus { background-color: var(--tifod-color-dark); border-color: var(--tifod-color-dark); }
+        /* href and logo */
+        .tifod-logo-colored, .tifod-logo, a, .btn-link { color: var(--tifod-color); }
+        a:hover, a:focus, .btn-link:hover, .btn-link:focus { color: var(--tifod-color-dark); }
+
+/***************/
+/* Post player */
+/***************/
+    #player-content { transition: height 2s; text-align: center; }
+
+    .prev, .next, .post-infos { opacity: 0; transition: opacity 0.5s; }
+    .checkbox-post-infos { display: none; }
+
+    .slideshow-label { display: block; }
+    .slideshow-container {
+        display: inline-block;
+        position: relative;
+        max-width: 100%;
+        margin: 3px;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--rgba-gray);
+        border-bottom-width: 2px;
+    }
+
+    /* Next & previous buttons */
+    .prev:after { content: "\276E"; }
+    .next:after { content: "\276F"; }
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        background-color: var(--rgba-gray);
+        cursor: pointer;
+    }
+    .prev:hover, .next:hover { background-color: var(--rgba-gray-dark); }
+
+    /* Position the "next button" to the right */
+    .prev { left: 0; border-radius: 0 var(--border-radius) var(--border-radius) 0; }
+    .next { right: 0; border-radius: var(--border-radius) 0 0 var(--border-radius); }
+
+    /* Post */
+    .post:not(.active-post), .post-group:not(.active-group) { display: none; }
+    .active-post, .active-group { display: inline-block; }
+    .post img { border-radius: var(--border-radius); max-width: 100%; height: auto; }
+    .post-thumbnail { max-height: 20em; width: auto; }
+
+    /* Post infos */
+    .post-infos {
+        width: 100%;
+        text-align: center;
+        color: white;
+        padding: 8px 12px;
+        position: absolute;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        background-color: var(--rgba-gray);
+        vertical-align: middle;
+        top: 0;
+    }
+    .post-infos>a, .post-infos>*>a { color: white; }
+    .post-infos-right { float: right; }
+    .post-infos-left { float: left; }
+    .post-infos .badge { background-color: var(--rgba-gray); }
+
+    img.user_pic { margin: 0 3px; vertical-align: middle; }
+    
+    /* single-post */
+    .single-post { margin: 5px; display: inline-block; }
+    .single-post>*:not(a) {
+        text-align: left;
+        display: block;
+        padding: 5px 0;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        border: 1px solid var(--rgba-gray);
+        border-bottom: none;
+    }
+    .single-post>a {
+        display: inline-block;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        border: 1px solid var(--rgba-gray);
+        border-width: 0 1px 2px 1px;
+    }
+    .single-post>a>img { border-radius: 0 0 var(--border-radius) var(--border-radius); }
+    
+/**********/
+/* navbar */
+/**********/
+    .tifod-logo { font-size: 3em; font-weight: 700; }
+    .tifod-logo > a { text-decoration: none; }
+    .tifod-logo-center { display: block; text-align: center; }
+    .navbar > * { margin: 1em 12px; }
+    .navbar-right { float: right; }
+    .navbar-user { font-size: 1.3em; }
+
+/*********/
+/* forms */
+/*********/
+    /* form-card */
+    .form-card {
+        padding: 3em 1em;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--rgba-gray);
+        background-color: white;
+        border-bottom-width: 2px;
+    }
+
+/* mobile */
+@media only screen and (max-width: 768px){
+    .checkbox-post-infos:checked ~ .slideshow-container .active-post .post-infos, .checkbox-post-infos:checked ~ .slideshow-container .prev, .checkbox-post-infos:checked ~ .slideshow-container .next { display: block; opacity: 1; }
+    .prev, .next, .post-infos { display: none; }
+}
+/* bigger than mobile */
+@media only screen and (min-width: 768px) {
+    .mobile { display: none; }
+    .slideshow-container:hover .prev, .slideshow-container:hover .next, .slideshow-container:hover .post-infos { opacity: 1; }
+}

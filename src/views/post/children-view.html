@@ -1,0 +1,11 @@
+<label class="slideshow-label"><input type="checkbox" class="checkbox-post-infos" />
+    <div class="slideshow-container">
+        {% for post in children %}
+            {% include 'post/post-details/single-post.html' %}
+        {% endfor %}
+        {% if children|length > 1 %}
+            <span class="prev"></span>
+            <span class="next"></span>
+        {% endif %}
+    </div>
+</label>

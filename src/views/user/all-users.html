@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}All users{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<div class="container">
+    <h1>{{ _('all users')|capitalize }}</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>{{ _('pseudo')|capitalize }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in allUsers %}
+            <tr>
+                <td><a href="/u/{{ user.pseudo }}"><img src="{{ user.user_avatar_file_full_path }}" alt="profile picture" style="height: 1em;" class="user_pic" />{{ user.pseudo }}</a></td>
+                <td>{{ user.post_amount }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
