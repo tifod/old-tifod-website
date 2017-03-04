@@ -158,7 +158,10 @@ $router->post('/settings/resetpassword',function (){
         // throw 'Some fields are left empty'
     // }
     echo '- welcome on the blog'; });
-$router->get('/r/:id/add',function ($id){ echo '- welcome on the reading page'; });
+$router->get('/r/:id/add',function ($id){ echo Utility\Twig::render('post/add-answer.html', ['post' => new Post\Entity ($id) ]); });
+$router->post('/r/:id/add',function ($id){
+    
+});
 $router->get('/r/:id/edit',function ($id){ echo '- welcome on the reading page'; });
 $router->get('/r/:id/upvote',function ($id){ echo '- welcome on the reading page'; });
 $router->get('/r/:id/downvote',function ($id){ echo '- welcome on the reading page'; });

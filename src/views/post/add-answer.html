@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{{ parent() }}
+<div class="container">
+    <img class="thumbnail post-thumbnail" src="{{ post.file_full_path }}" >
+    <form>
+        <label title="Join a picture" class="btn btn-default" ><span class="fa fa-camera fa-fw" aria-hidden="true"></span>Choose file<input id="add-post-input" style="display:none;" type="file" name="file_path" /></label>
+        <img id="post-preview" class="thumbnail post-thumbnail" style="display: none;" src="/img/loader.svg" >
+    </form>
+</div>
+{% endblock %}

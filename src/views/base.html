@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <style>.div-center { text-align: center; }</style>
 </head>
 <body>
 {% if error_message %}
@@ -21,7 +22,7 @@
 </nav>
 {% endblock %}
 <hr>
-<footer id="footer" class="footer navbar-static-bottom">
+<footer class="footer navbar-static-bottom">
     <div class="container">
         <ul class="list-inline">
             <li>
@@ -29,7 +30,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ language_list[current_language_code] }}<span class="fa fa-fw fa-caret-down"></span></a>
                     <ul class="dropdown-menu dropdown-menu-left">
                     {% for language_code, language_worded in language_list %}
-                        <li{% if language_code == current_language_code %} class="disabled"><a href="#footer">{{ language_worded }}</a>{% else %}><a href="/lang/{{ language_code }}">{{ language_worded }}</a>{% endif %}</li>
+                        <li{% if language_code == current_language_code %} class="disabled"><a href="#" onclick="event.preventDefault()" >{{ language_worded }}</a>{% else %}><a href="/lang/{{ language_code }}">{{ language_worded }}</a>{% endif %}</li>
                     {% endfor %}
                     </ul>
                 </div>

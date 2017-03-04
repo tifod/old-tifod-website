@@ -45,6 +45,20 @@ $(document).ready(function(){
     $(".slideshow-container").on("swiperight",function(){ prevSlide($(this)); });
     $(document).on("click",".prev",function(){ prevSlide($(this).parent()); $(this).closest('.slideshow-label').trigger('click'); });
     
+    /* form input preview */
+    $('#add-post-input').on('change', function(){
+        if (this.files && this.files[0] && this.value != '') {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#post-preview').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+            $('#post-preview').show();
+        } else {
+            $('#post-preview').hide();
+        }
+    });
+    
     /* Document smooth height change */
     function slideChange () {
         $('#player-content').attr('style', 'height: '+$('#player-content div:first-child').css('height')+';');
